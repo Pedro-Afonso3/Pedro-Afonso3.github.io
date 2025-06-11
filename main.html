@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor - Dia dos Namorados</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebee;
+            color: #d81b60;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .slideshow-container {
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        .mySlides img {
+            width: 100%;
+            vertical-align: middle;
+            border-radius: 10px;
+        }
+        
+    
+        
+        .prev:hover, .next:hover {
+            background-color: rgba(216, 27, 96, 0.8);
+        }
+        
+       
+        
+        .active, .dot:hover {
+            background-color: #d81b60;
+        }
+        
+        .timer {
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fce4ec;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .time-unit {
+            display: inline-block;
+            margin: 0 5px;
+            min-width: 60px;
+        }
+        
+        .time-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .time-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+        }
+        
+        .love-text {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: left;
+            line-height: 1.6;
+        }
+        
+        .heart {
+            color: #d81b60;
+            font-size: 1.5em;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            font-size: 0.9em;
+            color: #d81b60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nosso Amor <span class="heart">❤</span></h1>
+        
+        <div class="slideshow-container">
+            <!-- Substitua as imagens pelas suas fotos -->
+            <div class="mySlides fade">
+                <img src="20191002_174948.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="20191014_190838.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="IMG_20191127_182229.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="IMG-20200112-WA0027.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="IMG_20220925_144504.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="IMG_20231215_221506.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="IMG_20250418_184450029.jpg" style="width:100%">
+            </div>
+            
+            
+        </div>
+        
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        
+        <div class="timer" id="loveTimer">
+            <h3>Nossa jornada de amor</h3>
+            <div class="time-container">
+                <div class="time-unit">
+                    <span class="time-value" id="days">00</span>
+                    <span class="time-label">Dias</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="hours">00</span>
+                    <span class="time-label">Horas</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="minutes">00</span>
+                    <span class="time-label">Minutos</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="seconds">00</span>
+                    <span class="time-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="love-text" contenteditable="true">
+            <!-- Texto editável - clique para editar -->
+            <p>Meu amor,</p>
+            <p>Neste Dia dos Namorados, quero te dizer o quanto você é especial para mim. Cada momento ao seu lado é um presente que guardo com carinho no meu coração.</p>
+            <p>Obrigado por ser minha luz, meu porto seguro e minha maior alegria. Que possamos continuar construindo nossa história de amor, cheia de momentos como esses que eternizamos em fotos.</p>
+            <p>Te amo mais que todas as estrelas no céu.</p>
+            <p>Para sempre seu/sua,</p>
+            <p>❤</p>
+        </div>
+        
+        <footer>
+            Feliz Dia dos Namorados! Cada dia ao seu lado é um presente.
+        </footer>
+    </div>
+
+    <script>
+        // Slideshow
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    // Função para avançar slides automaticamente
+    function autoSlides() {
+        plusSlides(1); // Avança para o próximo slide
+    }
+    
+    // Configura o intervalo de 5 segundos (5000 milissegundos)
+    let slideInterval = setInterval(autoSlides, 5000);
+        
+        function plusSlides(n) {
+            // Reinicia o contador quando muda manualmente
+        clearInterval(slideInterval);
+        slideInterval = setInterval(autoSlides, 5000);
+        showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+             // Reinicia o contador quando muda manualmente
+        clearInterval(slideInterval);
+        slideInterval = setInterval(autoSlides, 5000);
+        showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        }
+        
+        // Timer - Configure a data de início do relacionamento
+        const startDate = new Date("2019-07-11T10:30:00"); // Altere para a data do seu relacionamento
+        
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - startDate;
+            
+            // Calcula dias, horas, minutos e segundos
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // Atualiza a exibição
+            document.getElementById("days").textContent = days.toString().padStart(2, '0');
+            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Chamada inicial
+    </script>
+</body>
+</html>
